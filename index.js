@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 const bodyParser = require('body-parser');
 
 
-dotenv.config({path: path.join(__dirname, 'configuration', 'config.env')})
+dotenv.config();
 
 app.use(cors());
 app.use(express.json());
@@ -40,7 +40,7 @@ const addresso = require('./bridge/address');
 
 
 /*mongoose.connect("mongodb://localhost:27017/ot").then(() => {console.log("Mongodb connected Successfully")}).catch((err) => {console.log("Errore : ",err)}); */
-mongoose.connect("mongodb+srv://pfrcapphelpline_db_user:yikbh9DQo5wZnRVd@cluster0.o1drfq8.mongodb.net/?appName=Cluster0").then(() => {console.log("Mongodb connected Successfully")}).catch((err) => {console.log("Errore : ",err)});
+mongoose.connect(process.env.MONGO_URI).then(() => {console.log("Mongodb connected Successfully")}).catch((err) => {console.log("Errore : ",err)});
 
 
 
