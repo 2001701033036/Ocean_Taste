@@ -73,7 +73,6 @@ const upload = multer({
   });
 
 
-
 //******************************************************************API Area****************************************************************
 
 //Segregated
@@ -84,7 +83,6 @@ app.use('/ot/baseone',categ);
 app.use('/ot/baseone',oldotuser);
 app.use('/ot/baseone',buyo);
 app.use('/ot/baseone',addresso);
-
 
 
 //Raw Apis
@@ -134,8 +132,7 @@ app.post("/ot/baseone/item", upload.single("itemimage"), async(req, res) => {
         }
 });
 
-
-  
+ 
   app.get("/ot/baseone/item", async (req, res) => {
     try {
       const getitem = await otitem.find({})
@@ -153,8 +150,6 @@ app.post("/ot/baseone/item", upload.single("itemimage"), async(req, res) => {
   });
   
 
-
-  
   app.put("/ot/baseone/item/:id", upload.single("itemimage"), async (req, res) => {
       const id = req.params.id;
       const { removeimage, ...updatedata } = req.body;
@@ -221,8 +216,6 @@ app.delete("/ot/baseone/item/:id", async(req, res) => {
 })
 
 
-
-
 //============================================================Firebase===============================================================================================================================================================
 
 app.get('/ot/baseone/fire-users', async(req, res) => {
@@ -242,7 +235,6 @@ app.get('/ot/baseone/fire-users', async(req, res) => {
         console.log("Error while fetching list", error)
     }
 })
-
 
 
 
